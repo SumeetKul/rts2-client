@@ -1,7 +1,7 @@
 # rts2-client
 ==========================THE CLIENT CODE===================================
 
-Welcome, client telescope. This code will help you communicate with SCOT: the Server for Co-ordinating Observations of Transients, and automatically observe any target you request from it, provided SCOT responds affirmatively.
+Greetings, client user telescope. This code get you connected with (soon-to-be re-christened) SCOT: the Server for Co-ordinating Observations of Transients, and automatically observe any target you request from it, provided SCOT responds affirmatively.
 
 ============================================================================
 
