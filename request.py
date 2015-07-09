@@ -8,7 +8,7 @@ def http_req():
 	try:
 		r = requests.get(p.url)
 		if 'target' in r.headers:
-			if r.headers['target']:
+                        if 'True' in r.headers['target']:
 				filename =  time.strftime("%Y%m%d_%H%M%S") + '.txt'
 				n.savetxt(p.tar_dir + filename, [r.content], fmt = '%s')
 				print  'Target file detected'

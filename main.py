@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import time, params as p, jsoncalls as j
+import time, params as p, jsoncalls as j, os
 from request import http_req
 
 while True:
@@ -29,11 +29,11 @@ while True:
 					time.sleep(p.rts2_poll_time)
 					current_id = j.getid()
 		else:
-			tar_file = select_file(p.sms_path)					#If no target from server, check for sms target. If true observe else sleep.
-			if tar_file == None:
-				sleep = True
-			else:
+			if file in os.listdir(p.sms_path):
+				print 'Sms target observing...'
 				obs_id = j.observe(tar_file)
+			else:
+				sleep = True
 	
 	time.sleep(p.sleeptime)
 
