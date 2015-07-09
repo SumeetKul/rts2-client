@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 #Program asks for targets, creates target and observes.
 
-#Import Necessary packcages
+#Import Necessary packages
 import rts2.json as rts2json, numpy as n, time, os.path, sys, params as p
 from tar_info import Target
 from socket import error as ConnectionError
+import database
 
 #tar_dir = 'targets/'
 
@@ -13,6 +14,8 @@ def observe(tar_file):
 		target = Target()
 		target.from_file(p.tar_dir + '%s' % tar_file)
 		print 'File read at ' + time.asctime(time.localtime()) + '. \nCreating Target...'
+               
+                database.create_log(tar_file)
 		
 		#Create a json object
 		
@@ -39,7 +42,7 @@ def observe(tar_file):
 			json.loadJson(path='/api/cmd',args={'d':'EXEC','c':'now %d' % ID})
 			time.asctime(time.localtime())
 		
-		if ((exp_end - time.time()) < 0.0):
+		if ((exp_end - time.time()) < 10.0):
 			print 'Starting Observation for target ID %d at ' % ID + time.asctime(time.localtime())
 			json.loadJson(path='/api/cmd',args={'d':'EXEC','c':'now %d' % ID})
 		else:
@@ -47,6 +50,7 @@ def observe(tar_file):
 			print 'Starting Observation for target ID %d at ' % ID + time.asctime(time.localtime())
 			json.loadJson(path='/api/cmd',args={'d':'EXEC','c':'now %d' % ID})
 		
+                
 		return ID
 	
 	except :
