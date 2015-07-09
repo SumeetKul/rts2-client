@@ -5,8 +5,8 @@ Greetings, client user telescope. This code get you connected with (soon-to-be r
 
 ============================================================================
 
-For Humans operating the telescope:
+For Humans:
 
 Please refer to the client-code information manual present in this repository. Follow all the steps carefully, and get ready to play!
 
-Update one.1 ends. See you soon!
+Update one.1 ends. Expect a lot of changes here. See you soon!
