@@ -2,6 +2,14 @@
 
 import time, params as p, jsoncalls as j, os
 from request import http_req
+import startup
+
+print "Initialising client..."
+time.sleep(1.0)
+print "Checking for available devices..."
+time.sleep(1.0)
+startup.check_devices()
+
 
 while True:
 	sleep = False
