@@ -1,6 +1,6 @@
 #File paths
 tar_dir  = '/home/sumeet/rts2-client/server_targets/'
-sms_path = '/home/sumeet/rts2-client/sms_targets/'
+sms_path = '/home/sumeet/rts2-client/sms_targets'
 
 #server params
 url = 'http://localhost:5000/trigger_request/1/'
