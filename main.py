@@ -6,9 +6,14 @@ import startup
 
 print "Initialising client..."
 time.sleep(1.0)
+
 print "Checking for available devices..."
 time.sleep(1.0)
 startup.check_devices()
+
+print "Checking Weather conditions..."
+time.sleep(1.0)
+startup.check_weather()
 
 
 while True:
