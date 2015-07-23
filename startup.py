@@ -16,10 +16,15 @@ def check_devices():
     Device_list = json.loadJson(path='/api/devices')
     Reqd_devices = ['C0','T0','F0','SD','EXEC']
     if all(x in Device_list for x in Reqd_devices):
-        print "Detected: Camera (C0), Mount (T0), Focusser (F0), Sensor(SD)"
-        print "Executor ON"
+        for i in range(len(Reqd_devices)):
+            print "Detected", Reqd_devices[i]
+            time.sleep(0.1)
+        print "All devices available"
     else:    
         for i in Reqd_devices:
+            if i in Device_list:
+                print "Detected", i
+                time.sleep(1.0)
             if not i in Device_list:
                 print "Cannot detect", i
         time.sleep(1.0)
