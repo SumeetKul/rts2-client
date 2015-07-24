@@ -3,7 +3,7 @@ class Target:
 	
 	#Defining variables and setting define values.
 	def __init__(self):
-		self.name     = 'Trigger_00'
+		self.Name     = 'Trigger_00'
 		self.RA       = 0.0
 		self.Dec      = 0.0
 		self.Filter   = None
