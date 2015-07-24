@@ -4,6 +4,8 @@ import time, params as p, jsoncalls as j, os
 from request import http_req
 import startup
 
+
+
 print "Initialising client..."
 time.sleep(1.0)
 
@@ -12,7 +14,6 @@ time.sleep(1.0)
 startup.check_devices()
 
 print "Checking Weather conditions..."
-time.sleep(1.0)
 startup.check_weather()
 
 
