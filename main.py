@@ -7,6 +7,7 @@ import startup
 
 
 print "Initialising client..."
+startup.check_rts2()
 time.sleep(1.0)
 
 print "Checking for available devices..."

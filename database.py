@@ -23,7 +23,12 @@ def create_log(tar_file):
 
     finally:
         con.close()
-          
+        
+#Table created as:
+#con = lite.connect('client.db')
+#cur = con.cursor()        
+#with con:
+#    cur.execute(CREATE TABLE Accepted_Targets(Id INTEGER PRIMARY KEY, Timestamp TEXT, Name TEXT, RA REAL, DEC REAL, Filter TEXT, #Number_of_Exposures INT, Exposure_Time INT))         
         
 
 

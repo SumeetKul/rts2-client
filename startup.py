@@ -6,6 +6,7 @@ import params as p
 import os
 import sys
 import time
+import commands
 
 def query_continue(question):                                      #In case of startup difficulties, provides an option to continue or abort.
     prompt = "[y/n]"
@@ -53,15 +54,16 @@ def check_weather():
     if json.getSingleValue('SD', 'good_weather', refresh_not_found = False) == 1:
         print "Weather conditions are alright"
     
-    elif json.getSingleValue('SD', 'good_weather', refresh_not_found = False) == 0:
+    else:
+         if json.getSingleValue('SD', 'good_weather', refresh_not_found = False) == 0:
         
-        for i in w_elements:
-            if json.getSingleValue('SD', i, refresh_not_found = False) == 1:
-                print "Bad Weather: Unfavourable", i[3:], "conditions"
-                break
-            else: 
-                print "Bad Weather: cause unknown"
-                query_continue("Do you want to continue?")
+             for i in w_elements:
+                 if json.getSingleValue('SD', i, refresh_not_found = False) == 1:
+                     print "Bad Weather: Unfavourable", i[3:], "conditions"
+             print "Bad weather: Cause unknown."
+             query_continue("Do you want to continue?")
+             
+             
 
 
 def check_time():
@@ -72,12 +74,21 @@ def check_time():
         return
     else:
         print "It is", t[json.getState('centrald')], "-time."
+        
+      
+      
+def check_rts2():
+    if not 'rts2' in commands.getoutput('ps -A'):
+        print "Please start RTS2 and retry"
+        sys.exit()
+    else:
+        pass    
+            
 
 
 
 
                 
-
 
         
        
