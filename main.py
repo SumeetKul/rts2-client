@@ -6,11 +6,13 @@ import startup
 
 
 
-print "Initialising client..."
+print "Initialising client...\n"
 startup.check_rts2()
 time.sleep(1.0)
 
-print "Checking for available devices..."
+startup.check_time()
+
+print "Checking available devices..."
 time.sleep(1.0)
 startup.check_devices()
 
